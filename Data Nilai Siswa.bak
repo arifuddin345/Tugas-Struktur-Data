@@ -1,13 +1,15 @@
-#include <iostream.h>
+#include <iostream>
 #include <conio.h>
 #include <stdio.h>
 #include <string.h>
+
+using namespace std;
 
 int i,j,pil,pil2,jum,wadah,ada,hapus, ke;
 char keluar;
 char wadah2[25];
 char cari[25];
-char nama [25][25];
+char nama[25][25];
 int nomor[25];
 int nilai[25];
 int umur[25];
@@ -16,12 +18,12 @@ int caridata[25];
 
 void tampil()
       	{
-         	cout<<"  -------------------------------------------- "<<endl;
-         	cout<<" | INDEK    NAMA    NOMOR    NILAI    UMUR    |"<<endl;
-            cout<<"  -------------------------------------------- "<<endl;
+         	cout<<"  -------------------------------------------------------- "<<endl;
+         	cout<<" | INDEK    NAMA    \t\tNOMOR    NILAI    UMUR    |"<<endl;
+            cout<<"  -------------------------------------------------------- "<<endl;
       		for (i=0;i<jum;i++)
       		{
-      		cout<<"     "<<i<<"      "<<nama[i]<<"       "<<nomor[i]<<"       "<<nilai[i]<<"       "<<umur[i]<<endl;
+      		cout<<"     "<<i+1<<"      "<<nama[i]<<"       "<<nomor[i]<<"\t\t       "<<nilai[i]<<"       "<<umur[i]<<endl;
       		}
             cout<<"  -------------------------------------------- "<<endl;
      	   }
@@ -36,11 +38,11 @@ void judul()
    cout<<endl;
    }
 
-void main ()
+int main ()
 {
    jum=0;
    awal:
-   clrscr();
+   system("cls");
    judul();
    cout<<"  -------------------------------------------- "<<endl;
    cout<<" | Menu Pilihan                               | "<<endl;
@@ -57,7 +59,7 @@ void main ()
    {
    case 1:
          {
-         clrscr();
+         system("cls");
          judul();
          cout<<"  -------------------------------------------- "<<endl;
       	cout<<" |              DATA SISWA SISWI              |"<<endl;
@@ -85,7 +87,7 @@ void main ()
 
    case 2:
    {
-   	clrscr();
+   	system("cls");
       judul();
       cout<<"  -------------------------------------------- "<<endl;
    	cout<<"   Jumlah Data Yang Ditambahkan = ";cin>>jum;
@@ -93,13 +95,15 @@ void main ()
    	for (i=0;i<jum;i++)
    	{
       	ulang:
-         clrscr();
-         judul();
-         cout<<"   NB: Umur Tidak Boleh Lebih dari 8 tahun     "<<endl;
-         cout<<"  -------------------------------------------- "<<endl;
+        system("cls");
+        judul();
+        cout<<"   NB: Umur Tidak Boleh Lebih dari 8 tahun     "<<endl;
+        cout<<"  -------------------------------------------- "<<endl;
       	cout<<"   Data Ke "<<i+1<<endl;
-         cout<<"  -------------------------------------------- "<<endl;
-   		cout<<"   Nama  = ";cin>>nama[i];
+        cout<<"  -------------------------------------------- "<<endl;
+   		cout<<"   Nama  = ";
+   		cin.ignore();
+   		gets(nama[i]);
       	cout<<"   Nomor = ";cin>>nomor[i];
       	cout<<"   Nilai = ";cin>>nilai[i];
       	cout<<"   Umur  = ";cin>>umur[i];
@@ -124,7 +128,7 @@ void main ()
     case 3:
     {
     	lagi:
-    	clrscr();
+    	system("cls");
     	judul();
       cout<<" 1. Urutkan Berdasarkan Nilai Tertinggi "<<endl;
       cout<<" 2. Urutkan Berdasarkan Nilai Terendah "<<endl;
@@ -159,7 +163,7 @@ void main ()
                   }
                }
             }
-         clrscr();
+         system("cls");
          judul();
          tampil();
          cout<<endl;
@@ -196,7 +200,7 @@ void main ()
                   }
                }
             }
-         clrscr();
+         system("cls");
          judul();
          tampil();
          cout<<endl;
@@ -233,7 +237,7 @@ void main ()
                   }
                }
             }
-         clrscr();
+         system("cls");
          judul();
          tampil();
          cout<<endl;
@@ -270,7 +274,7 @@ void main ()
                   }
                }
             }
-         clrscr();
+         system("cls");
          judul();
          tampil();
          cout<<endl;
@@ -296,15 +300,17 @@ void main ()
 
     case 4:
     {
-    	clrscr();
+      system("cls");
       judul();
       cout<<"  -------------------------------------------- "<<endl;
       cout<<" |        Cari Data Berdasarkan Nama          |"<<endl;
       cout<<"  -------------------------------------------- "<<endl;
       cout<<endl;
-      cout<<"  Masukan Nama Cari = ";cin>>cari;
+      cout<<"  Masukan Nama Cari = ";
+      cin.ignore();
+      gets(cari);
       cout<<endl;
-      clrscr();
+      system("cls");
       judul();
       ada=0;
       ke=0;
@@ -341,7 +347,7 @@ void main ()
 
     case 5:
     {
-    	clrscr();
+	  system("cls");
       judul();
       tampil();
       cout<<endl;
@@ -354,7 +360,7 @@ void main ()
          strcpy(nama[i],nama[i+1]);
       }
       jum=jum-1;
-      clrscr();
+      system("cls");
       judul();
       tampil();
       cout<<endl;
